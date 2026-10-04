@@ -22,28 +22,9 @@ campusradar/
 └── server/   Express API + MongoDB models + seed data
 ```
 
-## 🚀 Run locally
+## 🚀 Run 
 
-Requirements: **Node.js 18+** and **MongoDB** (local install *or* a free MongoDB Atlas cluster).
-
-```bash
-npm install          # installs root + server + client
-npm run dev          # starts API (5000) and website (5173)
-```
-
-Open http://localhost:5173
-
-### Database setup
-
-**Option A – Local MongoDB:** install MongoDB Community, make sure it is running. `server/.env` already points to `mongodb://127.0.0.1:27017/campusradar`.
-
-**Option B – MongoDB Atlas (free, no install):** create a free cluster → Database Access (add a user) → Network Access (allow your IP) → Connect → Drivers → copy the string into `server/.env`:
-
-```
-MONGODB_URI=mongodb+srv://<user>:<password>@<cluster>.mongodb.net/campusradar?retryWrites=true&w=majority
-```
-
-On first start the server creates the collections and inserts **CuriousParc + sample events** automatically. To reset events any time: `npm run seed`.
+Demo: http://localhost:5173
 
 ## 🗄️ MongoDB collections
 
@@ -64,19 +45,3 @@ On first start the server creates the collections and inserts **CuriousParc + sa
 | DELETE | `/api/saved/:sessionId/:eventId` | Unsave |
 | GET / PUT | `/api/profile/:sessionId` | Read / save profile |
 
-## ☁️ Deploy (single service, e.g. Render)
-
-```bash
-npm install && npm run build   # builds client/dist
-npm start                      # Express serves API + built website
-```
-Set `MONGODB_URI` (Atlas) and `PORT` as environment variables.
-
-## ⚠️ Known limitations
-
-- No login: profile and saved events are tied to a browser session id (clearing browser data starts a new session)
-- No push notifications, no admin panel (add events directly in MongoDB / Atlas)
-
-## 🧪 Testing & 🤖 AI usage
-
-> TODO: write your own real notes — who you tested with, what you changed, which AI tools you used and what you fixed yourself.
