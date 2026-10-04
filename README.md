@@ -24,7 +24,7 @@ campusradar/
 
 ## 🚀 Run 
 
-Demo: http://localhost:5173
+Demo: https://campusradar-neon.vercel.app/
 
 ## 🗄️ MongoDB collections
 
